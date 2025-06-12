@@ -14,7 +14,7 @@ const App = () => {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await fetch("http://127.0.0.1:8000/upload-pdf", {
+      const res = await fetch("https://ai-planet-internship-backend.onrender.com/upload-pdf", {
         method: "POST",
         body: formData,
       });
@@ -34,7 +34,7 @@ const App = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/ask-question", {
+      const res = await fetch("https://ai-planet-internship-backend.onrender.com/ask-question", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ pdf_id: pdfId, question }),
