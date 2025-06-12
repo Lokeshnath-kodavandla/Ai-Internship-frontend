@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = ({ pdfName, onUpload }) => {
   return (
     <nav
-      className="position-fixed top-0 d-flex justify-content-between align-items-center px-4"
+      className="d-flex justify-content-between align-items-center px-4"
       style={{ height: "77px", backgroundColor: "#fff", width: "100%" }}
     >
       {/* Left: AI Planet Logo */}
