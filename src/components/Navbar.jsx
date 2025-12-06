@@ -1,5 +1,5 @@
 import React from "react";
-import ailogoimage from "../assets/ailogoimage.png"
+import lokiimage from "../assets/Loki-Logo-1-1155x770.png"
 
 const Navbar = ({ pdfName, onUpload }) => {
   return (
@@ -10,7 +10,7 @@ const Navbar = ({ pdfName, onUpload }) => {
       {/* Left: AI Planet Logo */}
        <div>
         <img 
-          src={ailogoimage} 
+          src={lokiimage} 
           alt="AI Logo" 
           style={{ height: "60px", objectFit: "contain" }} 
         />
