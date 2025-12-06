@@ -12,7 +12,7 @@ const Navbar = ({ pdfName, onUpload }) => {
         <img 
           src={lokiimage} 
           alt="AI Logo" 
-          style={{ height: "60px", objectFit: "contain" }} 
+          style={{ height: "60px", objectFit: "contain" , borderRadius: "10px" }} 
         />
       </div>
 
