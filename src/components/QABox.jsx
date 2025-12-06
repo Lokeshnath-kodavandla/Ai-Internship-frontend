@@ -1,6 +1,6 @@
 // QABox.jsx
 import React from "react";
-import ailogoimage from "../assets/ailogoimage.png"
+import lokiimage from "../assets/Loki-Logo-1-1155x770.png"
 
 const QABox = ({ messages, loading }) => {
   const renderIcon = (sender) => {
@@ -19,7 +19,7 @@ const QABox = ({ messages, loading }) => {
       return (
          <div className="me-3">
         <img
-          src= {ailogoimage} 
+          src= {lokiimage} 
           alt="AI"
           style={{
             width: 40,
