@@ -31,7 +31,7 @@ const Navbar = ({ pdfName, onUpload }) => {
           accept="application/pdf"
           className="d-none"
           id="pdfUpload"
-          onChange={(e) => onUpload(e.target.files[0])}
+          onChange={(e) => onUpload(e)}
         />
         <label
           htmlFor="pdfUpload"
