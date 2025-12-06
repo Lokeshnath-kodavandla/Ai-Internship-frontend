@@ -10,15 +10,25 @@ const App = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const handleUpload = async (file) => {
+  // FIXED FUNCTION
+  const handleUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
     const formData = new FormData();
     formData.append("file", file);
+
     try {
-      const res = await fetch("https://ai-planet-internship-backend-1.onrender.com/upload-pdf", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://ai-planet-internship-backend-1.onrender.com/upload-pdf",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
       const data = await res.json();
+
       setPdfId(data.id);
       setPdfName(data.filename);
     } catch (error) {
@@ -34,11 +44,14 @@ const App = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("https://ai-planet-internship-backend-1.onrender.com/ask-question", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pdf_id: pdfId, question }),
-      });
+      const res = await fetch(
+        "https://ai-planet-internship-backend-1.onrender.com/ask-question",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pdf_id: pdfId, question }),
+        }
+      );
 
       const data = await res.json();
       const aiMessage = { sender: "ai", text: data.answer };
@@ -53,10 +66,13 @@ const App = () => {
 
   return (
     <>
+      {/* NOTE: We pass the **event** to handleUpload */}
       <Navbar pdfName={pdfName} onUpload={handleUpload} />
+
       <div className="container mt-4 mb-5">
         <QABox messages={messages} loading={loading} />
       </div>
+
       <QuestionBox onSend={handleAsk} />
     </>
   );
