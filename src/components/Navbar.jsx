@@ -1,4 +1,5 @@
 import React from "react";
+import ailogoimage from "../assets/ailogoimage.png"
 
 const Navbar = ({ pdfName, onUpload }) => {
   return (
@@ -8,46 +9,12 @@ const Navbar = ({ pdfName, onUpload }) => {
     >
       {/* Left: AI Planet Logo */}
        <div>
-          <svg
-            width="140"
-            height="140"
-            viewBox="0 0 140 140"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <!-- Outer Circle -->
-            <circle cx="70" cy="70" r="60" stroke="#0FA958" stroke-width="4" />
-        
-            <!-- Inner Circle -->
-            <circle cx="70" cy="70" r="45" fill="#0FA958" />
-
-            <!-- Text -->
-            <text
-              x="70"
-              y="75"
-              font-size="18"
-              font-weight="bold"
-              text-anchor="middle"
-              fill="white"
-              font-family="Arial, sans-serif"
-            >
-              LOKI
-            </text>
-
-            <text
-              x="70"
-              y="95"
-              font-size="10"
-              text-anchor="middle"
-              fill="white"
-              font-family="Arial, sans-serif"
-              letter-spacing="2"
-            >
-              PROJECT
-            </text>
-          </svg>
-    </div>
-
+        <img 
+          src={ailogoimage} 
+          alt="AI Logo" 
+          style={{ height: "60px", objectFit: "contain" }} 
+        />
+      </div>
 
       {/* Center: PDF name display */}
       {pdfName && (
